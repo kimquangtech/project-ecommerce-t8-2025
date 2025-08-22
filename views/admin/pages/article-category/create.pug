@@ -1,0 +1,40 @@
+extends ../../layouts/default.pug
+
+block script
+  script(src="/admin/js/pages/article-category/create.js")
+
+//- block title
+  //- span huhj
+block action
+  +btn-submit-add(`${ROUTER_ADMIN.VARIABLE.PREFIX}${ROUTER_ADMIN.VARIABLE.ARTICLE_CATEGORY}${ROUTER_ADMIN.API.ARTICLE_CATEGORY_CREATE}`)
+
+
+block main
+  div(class="kt-card ")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Thông tin cơ bản
+      div(class="kt-card-toolbar")
+        div Thêm
+    div(class="kt-card-content ")
+      form(class="kt-form" id = "form-article-category")
+        div(class="kt-form-item")
+          label(class="kt-form-label" for = "name") Tên danh mục:
+          div(class="kt-form-control")
+            input(id = "name" type="text", class="kt-input", placeholder="Tên danh mục" name = "name")
+            
+        div(class="kt-form-item")
+          label(class="kt-form-label" for = "parent_id") Danh mục cha
+          div(class="kt-form-control")
+            select(id = "parent_id" class="kt-select" data-kt-select="true", data-kt-select-enable-search="true", data-kt-select-search-placeholder="Nhập tên danh mục...", data-kt-select-placeholder="Chọn danh mục cha..." name = "parent_id")
+              option(value="" selected) ---Chọn danh mục cha---
+              each it in categories
+                option(value=it.id) #{it.name}
+        
+        div(class="kt-form-item")
+          label(class="kt-form-label" for="description") Mô tả
+          div(class="kt-form-control")
+            textarea(class="kt-textarea", placeholder="Mô tả" name = "description" id = "description")
+
+          //- div(class="kt-form-description") Enter your password to proceed.
+          //- div(class="kt-form-message") Vui lòng chọn danh mục cha.

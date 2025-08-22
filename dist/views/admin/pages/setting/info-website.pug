@@ -1,0 +1,77 @@
+extends ../../layouts/default.pug
+include ../../mixins/input.pug
+
+block main
+  div(class=`flex flex-col gap-5`) 
+    div(class="kt-card ")
+      div(class="kt-card-header")
+        div(class="kt-card-heading")
+          h2(class="kt-card-title") Cài đặt chung
+        div(class="kt-card-toolbar")
+          div Tiếng việt
+      div(class="kt-card-content ")
+        div(class=`kt-form flex flex-col`)
+          +input-label("Tên Website", "globe", "name_website", "text")
+          +input-label("Tên công ty", "building", "name_company", "text")
+          +input-label("Hotline", "phone", "hotline", "text")
+          +input-label("Số điện thoại", "phone", "phone", "text")
+          +input-label("Email", "envelope", "email", "email")
+          +input-label("Địa chỉ", "location-dot", "address", "text")
+          +input-label("Bản đồ (Nhúng iframe)", "map", "map_iframe", "textarea")
+          +input-label("Copyright", "copyright", "copyright", "text")
+
+    div(class="kt-card ")
+      div(class="kt-card-header")
+        div(class="kt-card-heading")
+          h2(class="kt-card-title") Mạng xã hội
+        div(class="kt-card-toolbar")
+          div Tiếng việt
+      div(class="kt-card-content ")
+        div(class=`kt-form grid grid-cols-1 md:grid-cols-2 gap-4`)
+          +input-icon-svg("Zalo", "socials[zalo]", "text", "https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg", "zalo.me/")
+          +input-icon-svg("Facebook", "socials[facebook]", "text", "https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg", "facebook.com/")
+          +input-icon-svg("Instagram", "socials[instagram]", "text", "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png", "instagram.com/")
+          +input-icon-svg("Linkedin", "socials[linkedin]", "text", "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png", "linkedin.com/in/")
+          +input-icon-svg("WhatsApp", "socials[whatsapp]", "text", "https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg", "whatsapp.com/")
+          +input-icon-svg("Tiktok", "socials[tiktok]", "text", "https://upload.wikimedia.org/wikipedia/commons/3/34/Ionicons_logo-tiktok.svg", "tiktok.com/")
+          +input-icon-svg("X", "socials[x]", "text", "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg", "twitter.com/")
+          +input-icon-svg("Youtube", "socials[youtube]", "text", "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg", "youtube.com/c/")
+    div(class="kt-card ")
+      div(class="kt-card-header")
+        div(class="kt-card-heading")
+          h2(class="kt-card-title") Link trang thương mại điện tử
+        div(class="kt-card-toolbar")
+          div Tiếng việt
+      div(class="kt-card-content ")
+        div(class=`kt-form grid grid-cols-1 md:grid-cols-2 gap-4`)
+          +input-link("Shopee", "shopping-cart", "ecommerce[shopee]", "text", "shopee.vn/")
+          +input-link("Tiki", "shopping-cart", "ecommerce[tiki]", "text", "tiki.vn/cua-hang/")
+          +input-link("Lazada", "shopping-cart", "ecommerce[lazada]", "text", "lazada.vn/shop/")
+          +input-link("Sendo", "shopping-cart", "ecommerce[sendo]", "text", "sendo.vn/shop/")
+          +input-link("Amazon", "shopping-cart", "ecommerce[amazon]", "text", "amazon.com/")
+          +input-link("eBay", "shopping-cart", "ecommerce[ebay]", "text", "ebay.com/")
+          +input-link("GrabMart", "shopping-cart", "ecommerce[grabmart]", "text", "grab.com/vn/mart/")
+          +input-link("GoMart", "shopping-cart", "ecommerce[gomart]", "text", "gofood.vn/")
+          +input-link("Bách Hóa Xanh", "shopping-cart", "ecommerce[bachhoaxanh]", "text", "bachhoaxanh.com/")
+          +input-link("VinMart", "shopping-cart", "ecommerce[vinmart]", "text", "vinmart.com/")
+
+    div(class="kt-card ")
+      div(class="kt-card-header")
+        div(class="kt-card-heading")
+          h2(class="kt-card-title") Chi nhánh
+        div(class="kt-card-toolbar")
+          div Tiếng việt
+      div(class="kt-card-content ")
+        div(class=`kt-form flex flex-col gap-4`)
+          +input-label("Tên cơ sở", "building", "branch[name]", "text")
+          +input-label("Số điện thoại", "phone", "branch[phone]", "text")
+          +input-label("Email", "envelope", "branch[email]", "email")
+          +input-label("Địa chỉ", "map", "branch[address]", "text")
+          div(class="flex gap-2")
+            button(type="button" class="kt-btn kt-btn-danger")
+              i(class="fa-duotone fal fa-trash")
+              span Xóa
+            button(type="button" class="kt-btn kt-btn-primary")
+              i(class="fa-duotone fal fa-plus")
+              span + Thêm mới chi nhánh
+            i(class=`si si-facebook`)

@@ -1,0 +1,14 @@
+mixin btn-href(link = null, text = "Thêm mới", icon = "ki-plus")
+  a(class="kt-btn kt-btn-primary", href = link)
+    i(class=`ki-filled ${icon}`)
+    | #{text}
+
+mixin btn-href-outline(icon = "ki-plus", text = "Thêm mới", link = null)
+  a(class="kt-btn kt-btn-outline", href = link)
+    i(class=`ki-filled ${icon}`)
+    | #{text}
+
+mixin btn-submit-add(link = null, text = "Thêm mới", icon = "ki-plus")
+  button(class="kt-btn kt-btn-primary", type = "submit", btn-submit = link)
+    i(class=`ki-filled ${icon}`)
+    | #{text} (F1)

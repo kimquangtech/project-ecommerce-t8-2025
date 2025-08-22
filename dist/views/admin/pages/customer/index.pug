@@ -1,0 +1,434 @@
+extends ../../layouts/default.pug
+
+block css
+  link(
+    type="text/css" 
+    rel="stylesheet" 
+    href="/admin/assets/libs/simple-datatables/style.css"
+    )
+block script
+  script(src="/admin/assets/libs/simple-datatables/umd/simple-datatables.js")
+  script(src="/admin/assets/js/pages/datatable.init.js")
+
+block main
+  .row
+    .col-12
+      .card
+        .card-header
+          .row.align-items-center
+            .col
+              h4.card-title Customers
+            // end col
+            .col-auto
+              form.row.g-2
+                .col-auto
+                  a.btn.bg-primary-subtle.text-primary.dropdown-toggle.d-flex.align-items-center.arrow-none(
+                    data-bs-auto-close="outside" 
+                    aria-expanded="false" 
+                    aria-haspopup="false" 
+                    role="button" 
+                    href="#" 
+                    data-bs-toggle="dropdown"
+                    )
+                    i.iconoir-filter-alt.me-1
+                    | Filter
+                  .dropdown-menu.dropdown-menu-start
+                    .p-2
+                      .form-check.mb-2
+                        input#filter-all.form-check-input(
+                          checked="" 
+                          type="checkbox"
+                          )
+                        label.form-check-label(for="filter-all") All
+                      .form-check.mb-2
+                        input#filter-one.form-check-input(
+                          checked="" 
+                          type="checkbox"
+                          )
+                        label.form-check-label(for="filter-one") New
+                      .form-check.mb-2
+                        input#filter-two.form-check-input(
+                          checked="" 
+                          type="checkbox"
+                          )
+                        label.form-check-label(for="filter-two") VIP
+                      .form-check.mb-2
+                        input#filter-three.form-check-input(
+                          checked="" 
+                          type="checkbox"
+                          )
+                        label.form-check-label(for="filter-three") Repeat
+                      .form-check.mb-2
+                        input#filter-four.form-check-input(
+                          checked="" 
+                          type="checkbox"
+                          )
+                        label.form-check-label(for="filter-four") Referral
+                      .form-check.mb-2
+                        input#filter-five.form-check-input(
+                          checked="" 
+                          type="checkbox"
+                          )
+                        label.form-check-label(for="filter-five") Inactive
+                      .form-check
+                        input#filter-six.form-check-input(
+                          checked="" 
+                          type="checkbox"
+                          )
+                        label.form-check-label(for="filter-six") Loyal
+                // end col
+                .col-auto
+                  button.btn.btn-primary(
+                    data-bs-target="#addBoard" 
+                    data-bs-toggle="modal" 
+                    type="button"
+                    )
+                    i.fa-solid.fa-plus.me-1
+                    | Add Product
+                // end col
+            // end col
+          // end row
+        // end card-header
+        .card-body.pt-0
+          .table-responsive
+            table.table.mb-0.checkbox-all(id="datatable_1")
+              thead.table-light
+                tr
+                  th(style="width: 16px")
+                    .form-check.mb-0
+                      input#select-all.form-check-input(
+                        name="select-all" 
+                        type="checkbox"
+                        )
+                  th.ps-0 Customer
+                  th Email
+                  th Status
+                  th Order
+                  th Spent
+                  th.text-end Action
+              tbody
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck1.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-2.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Andy Timmons
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") dummy@dummy.com
+                  td
+                    span.badge.bg-danger-subtle.text-danger VIP
+                  td 75
+                  td $280
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck2.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-3.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Jeff Beck
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") fake@dummy.com
+                  td
+                    span.badge.bg-success-subtle.text-success Loyal
+                  td 65
+                  td $150
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck3.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-4.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Vince Nelson
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") exemple@dummy.com
+                  td
+                    span.badge.bg-success-subtle.text-success Referral
+                  td 32
+                  td $39
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck4.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-5.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium David Gilmour
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") only@dummy.com
+                  td
+                    span.badge.bg-secondary-subtle.text-secondary Inactive
+                  td 40
+                  td $170
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck5.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-6.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Dianna Smiley
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") dummy@exemple.com
+                  td
+                    span.badge.bg-success-subtle.text-success Re-Order
+                  td 80
+                  td $220
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck6.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-7.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Adolfo Hess
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") dummy2dummay@dummy.com
+                  td
+                    span.badge.bg-success-subtle.text-success New
+                  td 45
+                  td $120
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck7.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-8.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium James Ahern
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") dummy10@dummy.com
+                  td
+                    span.badge.bg-blue-subtle.text-blue Repeat
+                  td 88
+                  td $580
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck8.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-9.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Simon Young
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") totaldummy@dummy.com
+                  td
+                    span.badge.bg-danger-subtle.text-danger VIP
+                  td 124
+                  td $380
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck9.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-10.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Robert Lewis
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") Exemple@dummy.com
+                  td
+                    span.badge.bg-secondary-subtle.text-secondary Inactive
+                  td 84
+                  td $254
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck10.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-1.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Erik Brim
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") onlyfake@dummy.com
+                  td
+                    span.badge.bg-success-subtle.text-success Potential
+                  td 62
+                  td $225
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck11.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-5.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Kevin Powers
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") exemple@exe.com
+                  td
+                    span.badge.bg-blue-subtle.text-blue Repeat
+                  td 54
+                  td $345
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck12.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-3.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Wendy Keen
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") Exemple@dummy.com
+                  td
+                    span.badge.bg-success-subtle.text-success New
+                  td 32
+                  td $39
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18
+                tr
+                  td(style="width: 16px")
+                    .form-check
+                      input#customCheck13.form-check-input(
+                        name="check" 
+                        type="checkbox"
+                        )
+                  td.ps-0
+                    img.thumb-md.d-inline.rounded-circle.me-1(
+                      alt="" 
+                      src="assets/images/users/avatar-1.jpg"
+                      )
+                    p.d-inline-block.align-middle.mb-0
+                      span.font-13.fw-medium Wendy Keen
+                  td
+                    a.d-inline-block.align-middle.mb-0.text-body(href="#") Exemple@dummy.com
+                  td
+                    span.badge.bg-success-subtle.text-success New
+                  td 32
+                  td $39
+                  td.text-end
+                    a(href="#")
+                      i.las.la-pen.text-secondary.fs-18
+                    a(href="#")
+                      i.las.la-trash-alt.text-secondary.fs-18

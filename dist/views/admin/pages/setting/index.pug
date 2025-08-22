@@ -1,0 +1,79 @@
+extends ../../layouts/default.pug
+
+mixin setting-card(icon, title, description, href=null)
+  a(href=href class=`flex items-start gap-3 p-5 cursor-pointer hover:bg-[var(--color-gray-50)] rounded-xl border border-border h-full`) 
+    div(class=`rounded-full flex items-center justify-center flex-shrink-0`)
+      i(class=`ki-duotone ${icon} text-[var(--color-blue-950)] text-3xl`)
+    div(class=`flex flex-col gap-1 flex-1 min-w-0`)
+      h3(class=`text-sm font-medium line-clamp-1`) #{title}
+      h4(class=`text-xs font-normal text-muted-foreground line-clamp-2`) #{description}
+
+block main
+  div(class="kt-card ")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Cài đặt chung
+      div(class="kt-card-toolbar")
+        div Tiếng việt
+    div(class="kt-card-content ")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "ki-information-2",
+          "Thông tin Website",
+          "Thiết lập thông tin website",
+          `${ROUTER_ADMIN.VARIABLE.PREFIX}${ROUTER_ADMIN.VARIABLE.SETTING}${ROUTER_ADMIN.INFO_WEBSITE_INDEX.PATH}`
+        )
+        +setting-card(
+          "ki-flag",
+          "Ngôn ngữ",
+          "Thiết lập ngôn ngữ website"
+        )
+        +setting-card(
+          "ki-message-text",
+          "Cấu hình email",
+          "Thiết lập cấu hình email"
+        )
+        +setting-card(
+          "ki-map",
+          "Tỉnh thành",
+          "Quản lý thông tin tỉnh thành"
+        )
+        +setting-card(
+          "ki-paper-plane",
+          "Form liên hệ",
+          "Quản lý thông tin form liên hệ"
+        )
+        +setting-card(
+          "ki-menu",
+          "Danh sách thuộc tính",
+          "Tùy chỉnh các thuộc tính mở rộng của sản phẩm và bài viết"
+        )
+        +setting-card(
+          "ki-social-media",
+          "Mạng xã hội",
+          "Cấu hình các thông tin liên quan đến các trang mạng xã hội"
+        )
+        +setting-card(
+          "ki-code",
+          "Mã nhúng",
+          "Quản lý mã nhúng"
+        )
+  
+  div(class="kt-card mt-6")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Danh mục
+      div(class="kt-card-toolbar")
+        div Quản lý
+    div(class="kt-card-content")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "ki-check-circle",
+          "Thuộc tính áp dụng theo danh mục",
+          "Tùy chỉnh các thuộc tính mở rộng cho từng danh mục sản phẩm"
+        )
+        +setting-card(
+          "ki-tag",
+          "Thương hiệu áp dụng theo danh mục",
+          "Tùy chỉnh thương hiệu cho từng danh mục sản phẩm"
+        )

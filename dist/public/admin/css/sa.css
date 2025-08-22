@@ -1,0 +1,293 @@
+
+[data-theme=default] {
+	--vz-font-family-primary: "hkgrotesk",sans-serif;
+	--vz-font-family-secondary: "Poppins",sans-serif;
+	--vz-grid-gutter-width: 1.5rem;
+	--vz-headings-font-weight: 500;
+	--vz-element-shadow: none;
+	--vz-card-border-width-custom: 0;
+	--vz-card-header-border-width: 1px;
+	--vz-card-shadow: 0 1px 2px rgba(56, 65, 74, 0.15);
+	--vz-headings-font-family: "Poppins",sans-serif;
+	--vz-vertical-menu-item-font-size: 0.9375rem;
+	--vz-vertical-menu-sub-item-font-size: 0.813rem;
+	--vz-vertical-menu-bg: #fff;
+	--vz-vertical-menu-border: #fff;
+	--vz-vertical-menu-item-color: #6d7080;
+	--vz-vertical-menu-item-bg: rgba(64, 81, 137, 0.15);
+	--vz-vertical-menu-item-hover-color: #405189;
+	--vz-vertical-menu-item-active-color: #405189;
+	--vz-vertical-menu-item-active-bg: rgba(64, 81, 137, 0.15);
+	--vz-vertical-menu-sub-item-color: #7c7f90;
+	--vz-vertical-menu-sub-item-hover-color: #405189;
+	--vz-vertical-menu-sub-item-active-color: #405189;
+	--vz-vertical-menu-title-color: #919da9;
+	--vz-vertical-menu-box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
+	--vz-vertical-menu-dropdown-box-shadow: 0 2px 4px rgba(15, 34, 58, 0.12);
+	--vz-sidebar-user-bg: #f3f6f9;
+	--vz-sidebar-user-name-text: #32373b;
+	--vz-sidebar-user-name-sub-text: #7c7f90;
+	--vz-header-bg: #fff;
+	--vz-header-border: #e9ebec;
+	--vz-header-item-color: #495057;
+	--vz-header-item-bg: rgba(53, 119, 241, 0.12);
+	--vz-header-item-sub-color: #878a99;
+	--vz-topbar-search-bg: #f3f3f9;
+	--vz-topbar-user-bg: #f3f3f9;
+	--vz-topbar-search-color: #495057;
+	--vz-page-title-box-shadow: 0 1px 2px rgba(56, 65, 74, 0.15);
+	--vz-page-title-border: none;
+	--vz-footer-bg: #fff;
+	--vz-footer-color: #98a6ad;
+	--vz-boxed-body-bg: #e5e5f2;
+	--vz-timeline-color: #fff;
+	--vz-chat-primary-bg: #f3f6f9;
+	--vz-chat-secondary-bg: rgba(10, 179, 156, 0.15);
+	--vz-chat-secondary-color: #0ab39c;
+	--vz-font-10: 0.625rem;
+	--vz-font-11: 0.6875rem;
+	--vz-font-12: 0.75rem;
+	--vz-font-13: 0.8125rem;
+	--vz-font-14: 0.875rem;
+	--vz-font-base: 0.8125rem;
+	--vz-font-15: 0.9375rem;
+	--vz-font-16: 1rem;
+	--vz-font-17: 1.0625rem;
+	--vz-font-18: 1.125rem;
+	--vz-font-19: 1.1875rem;
+	--vz-font-20: 1.25rem;
+	--vz-font-21: 1.3125rem;
+	--vz-font-22: 1.375rem;
+	--vz-font-23: 0.8125rem;
+	--vz-font-24: 1.5rem;
+	--vz-font-36: 2.25rem;
+	--vz-font-48: 3rem;
+	--vz-font-weight-light: 300;
+	--vz-font-weight-normal: 400;
+	--vz-font-weight-medium: 500;
+	--vz-font-weight-semibold: 600;
+	--vz-font-weight-bold: 700
+}
+
+:root {
+	--vz-blue: #3577f1;
+	--vz-indigo: #405189;
+	--vz-purple: #6559cc;
+	--vz-pink: #f672a7;
+	--vz-red: #f06548;
+	--vz-orange: #f1963b;
+	--vz-yellow: #f7b84b;
+	--vz-green: #0ab39c;
+	--vz-teal: #02a8b5;
+	--vz-cyan: #299cdb;
+	--vz-white: #fff;
+	--vz-gray: #878a99;
+	--vz-gray-dark: #343a40;
+	--vz-gray-100: #f3f6f9;
+	--vz-gray-200: #eff2f7;
+	--vz-gray-300: #e9ebec;
+	--vz-gray-400: #ced4da;
+	--vz-gray-500: #adb5bd;
+	--vz-gray-600: #878a99;
+	--vz-gray-700: #495057;
+	--vz-gray-800: #343a40;
+	--vz-gray-900: #212529;
+	--vz-primary: #405189;
+	--vz-secondary: #3577f1;
+	--vz-success: #0ab39c;
+	--vz-info: #299cdb;
+	--vz-warning: #f7b84b;
+	--vz-danger: #f06548;
+	--vz-light: #f3f6f9;
+	--vz-dark: #212529;
+	--vz-primary-rgb: 64,81,137;
+	--vz-secondary-rgb: 53,119,241;
+	--vz-success-rgb: 10,179,156;
+	--vz-info-rgb: 41,156,219;
+	--vz-warning-rgb: 247,184,75;
+	--vz-danger-rgb: 240,101,72;
+	--vz-light-rgb: 243,246,249;
+	--vz-dark-rgb: 33,37,41;
+	--vz-primary-text-emphasis: #364574;
+	--vz-secondary-text-emphasis: #2d65cd;
+	--vz-success-text-emphasis: #099885;
+	--vz-info-text-emphasis: #2385ba;
+	--vz-warning-text-emphasis: #d29c40;
+	--vz-danger-text-emphasis: #cc563d;
+	--vz-light-text-emphasis: #ced4da;
+	--vz-dark-text-emphasis: #343a40;
+	--vz-primary-bg-subtle: #e2e5ed;
+	--vz-secondary-bg-subtle: #e1ebfd;
+	--vz-success-bg-subtle: #daf4f0;
+	--vz-info-bg-subtle: #dff0fa;
+	--vz-warning-bg-subtle: #fef4e4;
+	--vz-danger-bg-subtle: #fde8e4;
+	--vz-light-bg-subtle: #f9fbfc;
+	--vz-dark-bg-subtle: #e9ebec;
+	--vz-primary-border-subtle: #b3b9d0;
+	--vz-secondary-border-subtle: #aec9f9;
+	--vz-success-border-subtle: #9de1d7;
+	--vz-info-border-subtle: #a9d7f1;
+	--vz-warning-border-subtle: #fce3b7;
+	--vz-danger-border-subtle: #f9c1b6;
+	--vz-light-border-subtle: #eff2f7;
+	--vz-dark-border-subtle: #adb5bd;
+	--vz-white-rgb: 255,255,255;
+	--vz-black-rgb: 0,0,0;
+	--vz-font-sans-serif: "Poppins",sans-serif;
+	--vz-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+	--vz-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+	--vz-body-font-family: "Poppins",sans-serif;
+	--vz-body-font-size: 0.8125rem;
+	--vz-body-font-weight: 400;
+	--vz-body-line-height: 1.5;
+	--vz-body-color: #212529;
+	--vz-body-color-rgb: 33,37,41;
+	--vz-body-bg: #f3f3f9;
+	--vz-body-bg-rgb: 243,243,249;
+	--vz-emphasis-color: #212529;
+	--vz-emphasis-color-rgb: 33,37,41;
+	--vz-secondary-color: #878a99;
+	--vz-secondary-color-rgb: 135,138,153;
+	--vz-secondary-bg: #fff;
+	--vz-secondary-bg-rgb: 255,255,255;
+	--vz-tertiary-color: rgba(33, 37, 41, 0.5);
+	--vz-tertiary-color-rgb: 33,37,41;
+	--vz-tertiary-bg: #eff2f7;
+	--vz-tertiary-bg-rgb: 239,242,247;
+	--vz-heading-color: #495057;
+	--vz-link-color: #405189;
+	--vz-link-color-rgb: 64,81,137;
+	--vz-link-decoration: none;
+	--vz-link-hover-color: #405189;
+	--vz-link-hover-color-rgb: 64,81,137;
+	--vz-code-color: #f672a7;
+	--vz-highlight-color: #212529;
+	--vz-highlight-bg: #fcf8e3;
+	--vz-border-width: 1px;
+	--vz-border-style: solid;
+	--vz-border-color: #e9ebec;
+	--vz-border-color-translucent: #ced4da;
+	--vz-border-radius: 0.25rem;
+	--vz-border-radius-sm: 0.2rem;
+	--vz-border-radius-lg: 0.3rem;
+	--vz-border-radius-xl: 1rem;
+	--vz-border-radius-xxl: 2rem;
+	--vz-border-radius-2xl: 2rem;
+	--vz-border-radius-pill: 50rem;
+	--vz-box-shadow: 0 1px 2px rgba(56, 65, 74, 0.15);
+	--vz-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+	--vz-box-shadow-lg: 0 5px 10px rgba(30, 32, 37, 0.12);
+	--vz-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+	--vz-focus-ring-width: 0.25rem;
+	--vz-focus-ring-opacity: 0.25;
+	--vz-focus-ring-color: rgba(64, 81, 137, 0.25);
+	--vz-form-valid-color: #0ab39c;
+	--vz-form-valid-border-color: #0ab39c;
+	--vz-form-invalid-color: #f06548;
+	--vz-form-invalid-border-color: #f06548
+}
+.swal2-container .swal2-title {
+	padding: 24px 24px 0;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.swal2-popup {
+	padding-bottom: 24px;
+	border-radius: 0.3rem;
+	background-color: #fff;
+	color: #212529
+}
+
+.swal2-popup .swal2-title {
+	color: #495057
+}
+
+.swal2-popup .swal2-html-container {
+	color: #212529
+}
+
+.swal2-footer {
+	border-top: 1px solid #e9ebec;
+	color: #212529
+}
+
+.swal2-html-container {
+	font-size: 16px
+}
+
+.swal2-icon.swal2-question {
+	border-color: #299cdb;
+	color: #299cdb
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+	background-color: #0ab39c
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+	border-color: rgba(10, 179, 156,.3)
+}
+
+.swal2-icon.swal2-warning {
+	border-color: #f7b84b;
+	color: #f7b84b
+}
+
+.swal2-styled:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none
+}
+
+.swal2-progress-steps .swal2-progress-step {
+	background: #405189
+}
+
+.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+	background: #405189
+}
+
+.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step,.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line {
+	background: rgba(64, 81, 137,.3)
+}
+
+.swal2-progress-steps .swal2-progress-step-line {
+	background: #405189
+}
+
+.swal2-actions.swal2-loading .swal2-styled.swal2-confirm {
+	border-left-color: #405189!important;
+	border-right-color: #405189!important;
+}
+
+.swal2-file,.swal2-input,.swal2-textarea {
+	border: 1px solid var(--vz-input-border-custom)
+}
+
+.swal2-actions > *{
+  padding: 8px 14.4px;
+  font-size: 13px;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-cancel){
+  background-color: var(--danger);
+}
+
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm){
+  background-color: var(--primary);
+}
+
+div:where(.swal2-container) div:where(.swal2-actions){
+  flex-direction: row-reverse;
+}
+
+.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-color: #b3b9d0
+}
+
+.swal2-validation-message {
+	background-color: transparent;
+}

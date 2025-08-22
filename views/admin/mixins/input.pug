@@ -1,0 +1,27 @@
+mixin input-label(label, icon, name, type = "text", value = null)
+
+  div(class=`kt-form-item`)
+    label(class=`kt-form-label font-[400]` for = name) #{label}
+    div(class="kt-input-group")
+      div(class="kt-input-addon kt-input-addon-icon")
+        i(class=`fa-duotone fal fa-${icon}`)
+      input(type=type, class="kt-input" id = name name = name value = value)
+
+mixin input-link(label, icon, name, type = "text", link, value = null)
+  div(class=`kt-form-item`)
+    label(class=`kt-form-label font-[400]` for = name) #{label}
+    div(class="kt-input-group")
+      div(class="kt-input-addon kt-input-addon-icon flex gap-3 p-2")
+        i(class=`fa-duotone fal fa-${icon}`)
+        div #{link}
+      input(type=type, class="kt-input" id = name name = name value = value)
+    
+mixin input-icon-svg(label, name, type = "text", image, link, value = null)
+  div(class=`kt-form-item`)
+    label(class=`kt-form-label font-[400]` for = name) #{label}
+    div(class="kt-input-group")
+      div(class="kt-input-addon kt-input-addon-icon flex gap-3 p-2")
+        img(src=image, alt="", class=`w-full !max-h-[25px]`)
+        div #{link}
+      input(type=type, class="kt-input" id = name name = name value = value)
+

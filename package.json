@@ -1,0 +1,29 @@
+{
+  "name": "project-ecommerce-t8-2025",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tran Kim Quang",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.ts",
+    "build": "tsc && node fs-extra.js",
+    "dev": "nodemon --exec ts-node index.ts"
+  },
+  "dependencies": {
+    "@keenthemes/ktui": "^1.0.20",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.1",
+    "joi": "^18.0.1",
+    "mongoose": "^8.17.1",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

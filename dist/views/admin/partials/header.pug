@@ -1,0 +1,165 @@
+header#header(class="kt-header fixed top-0 start-0 end-0 flex items-stretch shrink-0 bg-background", data-kt-sticky="true", data-kt-sticky-class="border-b border-border ", data-kt-sticky-name="header")
+  div#headerContainer(class="kt-container-fixed flex justify-between items-stretch lg:gap-4")
+    // Mobile Logo
+    div(class="flex gap-2.5 lg:hidden items-center -ms-1")
+      a(class="shrink-0", href="#")
+        img(class="max-h-[25px] w-full", src="https://keenthemes.com/static/metronic/starter-kits/html/dist/assets/media/app/mini-logo.svg")
+      div(class="flex items-center")
+        button(class="kt-btn kt-btn-icon kt-btn-ghost", data-kt-drawer-toggle="#sidebar")
+          i(class="ki-filled ki-menu")
+        button(class="kt-btn kt-btn-icon kt-btn-ghost", data-kt-drawer-toggle="#mega_menu_wrapper")
+          i(class="ki-filled ki-burger-menu-2")
+    // End of Mobile Logo
+    // Megamenu Contaoner
+    div#megaMenuContainer(class="flex items-stretch")
+      // Megamenu Inner
+      div(class="flex items-stretch [--kt-reparent-mode:prepend] [--kt-reparent-target:body] lg:[--kt-reparent-target:#megaMenuContainer] lg:[--kt-reparent-mode:prepend]", data-kt-reparent="true")
+        // Megamenu Wrapper
+        div(class="hidden lg:flex lg:items-stretch [--kt-drawer-enable:true] lg:[--kt-drawer-enable:false]", data-kt-drawer="true", data-kt-drawer-class="kt-drawer kt-drawer-start fixed z-10 top-0 bottom-0 w-full me-5 max-w-[250px] p-5 lg:p-0 overflow-auto", id="mega_menu_wrapper")
+          // Megamenu
+          //- div(class="kt-menu flex-col lg:flex-row gap-5 lg:gap-7.5", data-kt-menu="true", id="mega_menu")
+          //- h1(class="text-xl font-medium leading-none text-mono my-auto") Dashboard
+          div(class="flex flex-col justify-center gap-[5px]")
+            h1(class="text-xl font-medium leading-none text-mono") Web Master
+            div(class="flex items-center gap-2 text-sm font-normal text-secondary-foreground") Cùng Bạn Kiến Tạo Tương Lai Số
+    // Topbar
+    div(class="flex items-center gap-2.5")
+      // User
+      div(class="shrink-0", data-kt-dropdown="true", data-kt-dropdown-offset="10px, 10px", data-kt-dropdown-offset-rtl="-20px, 10px", data-kt-dropdown-placement="bottom-end", data-kt-dropdown-placement-rtl="bottom-start", data-kt-dropdown-trigger="click")
+        div(class="cursor-pointer shrink-0", data-kt-dropdown-toggle="true")
+          img(alt="", class="size-9 rounded-full border-2 border-green-500 shrink-0", src="/admin/media/avatars/300-2.png")
+        div(class="kt-dropdown-menu w-[250px]", data-kt-dropdown-menu="true")
+          div(class="flex items-center justify-between px-2.5 py-1.5 gap-1.5")
+            div(class="flex items-center gap-2")
+              img(alt="", class="size-9 shrink-0 rounded-full border-2 border-green-500", src="/admin/media/avatars/300-2.png")
+              div(class="flex flex-col gap-1.5")
+                span(class="text-sm text-foreground font-semibold leading-none")
+                  | Adminitrator
+                a(class="text-xs text-secondary-foreground hover:text-primary font-medium leading-none", href="#")
+                  | c.fisher@gmail.com
+            span(class="kt-badge kt-badge-sm kt-badge-primary kt-badge-outline")
+              | Pro
+          ul(class="kt-dropdown-menu-sub")
+            li
+              div(class="kt-dropdown-menu-separator")
+            li
+              a(class="kt-dropdown-menu-link", href="#")
+                i(class="ki-filled ki-badge")
+                | Public Profile
+            li
+              a(class="kt-dropdown-menu-link", href="#")
+                i(class="ki-filled ki-profile-circle")
+                | My Profile
+            li(data-kt-dropdown="true", data-kt-dropdown-placement="right-start", data-kt-dropdown-trigger="hover")
+              button(class="kt-dropdown-menu-toggle", data-kt-dropdown-toggle="true")
+                i(class="ki-filled ki-setting-2")
+                | My Account
+                span(class="kt-dropdown-menu-indicator")
+                  i(class="ki-filled ki-right text-xs")
+              div(class="kt-dropdown-menu w-[220px]", data-kt-dropdown-menu="true")
+                ul(class="kt-dropdown-menu-sub")
+                  li
+                    a(class="kt-dropdown-menu-link", href="#")
+                      i(class="ki-filled ki-coffee")
+                      | Get Started
+                  li
+                    a(class="kt-dropdown-menu-link", href="#")
+                      i(class="ki-filled ki-some-files")
+                      | My Profile
+                  li
+                    a(class="kt-dropdown-menu-link", href="#")
+                      span(class="flex items-center gap-2")
+                        i(class="ki-filled ki-icon")
+                        | Billing
+                      span(class="ms-auto inline-flex items-center", data-kt-tooltip="true", data-kt-tooltip-placement="top")
+                        i(class="ki-filled ki-information-2 text-base text-muted-foreground")
+                        span(class="kt-tooltip", data-kt-tooltip-content="true")
+                          | Payment and subscription info
+                  li
+                    a(class="kt-dropdown-menu-link", href="#")
+                      i(class="ki-filled ki-medal-star")
+                      | Security
+                  li
+                    a(class="kt-dropdown-menu-link", href="#")
+                      i(class="ki-filled ki-setting")
+                      | Members &amp;amp; Roles
+                  li
+                    a(class="kt-dropdown-menu-link", href="#")
+                      i(class="ki-filled ki-switch")
+                      | Integrations
+                  li
+                    div(class="kt-dropdown-menu-separator")
+                  li
+                    a(class="kt-dropdown-menu-link", href="#")
+                      span(class="flex items-center gap-2")
+                        i(class="ki-filled ki-shield-tick")
+                        | Notifications
+                      input(checked="", class="ms-auto kt-switch", name="check", type="checkbox", value="1")
+            li
+              a(class="kt-dropdown-menu-link", href="../../../../../devs.keenthemes.com/index.html")
+                i(class="ki-filled ki-message-programming")
+                | Dev Forum
+            li(data-kt-dropdown="true", data-kt-dropdown-placement="right-start", data-kt-dropdown-trigger="hover")
+              button(class="kt-dropdown-menu-toggle py-1", data-kt-dropdown-toggle="true")
+                span(class="flex items-center gap-2")
+                  i(class="ki-filled ki-icon")
+                  | Ngôn ngữ
+                span(class="ms-auto kt-badge kt-badge-stroke shrink-0") Tiếng Việt
+                  img(alt="", class="inline-block size-3.5 rounded-full", src="/admin/media/flags/vietnam-flag-circle.svg")
+              div(class="kt-dropdown-menu w-[180px]", data-kt-dropdown-menu="true")
+                ul(class="kt-dropdown-menu-sub")
+                  li(class="active")
+                    a(class="kt-dropdown-menu-link", href="#")
+                      span(class="flex items-center gap-2")
+                        img(alt="", class="inline-block size-4 rounded-full", src="https://keenthemes.com/static/metronic/starter-kits/html/dist/assets/media/flags/united-states.svg")
+                        span(class="kt-menu-title")
+                          | English
+                      i(class="ki-solid ki-check-circle ms-auto text-green-500 text-base")
+                  li(class="")
+                    a(class="kt-dropdown-menu-link", href="#")
+                      span(class="flex items-center gap-2")
+                        img(alt="", class="inline-block size-4 rounded-full", src="https://keenthemes.com/static/metronic/starter-kits/html/dist/assets/media/flags/saudi-arabia.svg")
+                        span(class="kt-menu-title")
+                          | Arabic(Saudi)
+                  li(class="")
+                    a(class="kt-dropdown-menu-link", href="#")
+                      span(class="flex items-center gap-2")
+                        img(alt="", class="inline-block size-4 rounded-full", src="https://keenthemes.com/static/metronic/starter-kits/html/dist/assets/media/flags/spain.svg")
+                        span(class="kt-menu-title")
+                          | Spanish
+                  li(class="")
+                    a(class="kt-dropdown-menu-link", href="#")
+                      span(class="flex items-center gap-2")
+                        img(alt="", class="inline-block size-4 rounded-full", src="https://keenthemes.com/static/metronic/starter-kits/html/dist/assets/media/flags/germany.svg")
+                        span(class="kt-menu-title")
+                          | German
+                  li(class="")
+                    a(class="kt-dropdown-menu-link", href="#")
+                      span(class="flex items-center gap-2")
+                        img(alt="", class="inline-block size-4 rounded-full", src="https://keenthemes.com/static/metronic/starter-kits/html/dist/assets/media/flags/japan.svg")
+                        span(class="kt-menu-title")
+                          | Japanese
+            li
+              div(class="kt-dropdown-menu-separator")
+          div(class="px-2.5 pt-1.5 mb-2.5 flex flex-col gap-3.5")
+            div(class="flex items-center gap-2 justify-between")
+              span(class="flex items-center gap-2")
+                i(class="ki-filled ki-moon text-base text-muted-foreground")
+                span(class="font-medium text-2sm")
+                  | Dark Mode
+              input(class="kt-switch", data-kt-theme-switch-state="dark", data-kt-theme-switch-toggle="true", name="check", type="checkbox", value="1")
+            a(class="kt-btn kt-btn-outline justify-center w-full", href="#")
+              | Log out
+      // End of User
+    // End of Topbar
+
+div(class="kt-page-title-bar sticky top-0 z-10 bg-background border-b border-border py-4")
+  div(class="kt-container-fixed")
+    div(class="flex items-center justify-between")
+      div(class="flex items-center gap-3")
+        h1(class="text-2xl font-semibold text-foreground")
+          block title
+            | #{TITLE_PAGE}
+
+      div(class="flex items-center gap-2")
+        block action

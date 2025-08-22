@@ -1,0 +1,51 @@
+head
+  title #{TITLE_PAGE} | Web Master
+  meta(charset="utf-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+  meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+  meta(name="description", content=DESCRIPTION_PAGE)
+  meta(name="keywords", content=KEYWORDS_PAGE)
+  link(rel="canonical", href=URL_PAGE)
+  link(rel="alternate", hreflang="vi", href=URL_PAGE)
+  // Twitter Card data
+  meta(name="twitter:card", content="website")
+  meta(name="twitter:site", content=TITLE_PAGE)
+  meta(name="twitter:title", content=TITLE_PAGE)
+  meta(name="twitter:description", content=DESCRIPTION_PAGE)
+  meta(name="twitter:image", content=IMAGE_PAGE)
+  // Open Graph data
+  meta(property="og:type", content="website")
+  meta(property="og:site_name", content=TITLE_PAGE)
+  meta(property="og:title", content=TITLE_PAGE)
+  meta(property="og:url", content=URL_PAGE)
+  meta(property="og:image", content=IMAGE_PAGE)
+  meta(property="og:description", content=DESCRIPTION_PAGE)
+  meta(http-equiv="x-dns-prefetch-control", content="on")
+  link(rel="dns-prefetch", href="https://cdn.daca.vn")
+  link(href="https://cdn.daca.vn/media/logo/favicon.ico", rel="icon", type="image/x-icon")
+
+  meta(content="/admin/media/app/og-image.png", property="og:image")
+  link(href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.4/dist/sweetalert2.min.css")
+  link(href="/admin/media/app/apple-touch-icon.png", rel="apple-touch-icon", sizes="180x180")
+  link(href="/admin/media/app/favicon-32x32.png", rel="icon", sizes="32x32", type="image/png")
+  link(href="/admin/media/app/favicon-16x16.png", rel="icon", sizes="16x16", type="image/png")
+  link(href="https://keenthemes.com/static/metronic/starter-kits/html/dist/assets/media/app/favicon.ico", rel="shortcut icon")
+  link(href="/admin/vendors/apexcharts/apexcharts.css", rel="stylesheet")
+  link(href="/admin/vendors/keenicons/styles.bundle.css", rel="stylesheet")
+  script(src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4", rel="stylesheet")
+  script(src="/tailwind.config.js", rel="stylesheet")
+  script(src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.4/dist/sweetalert2.all.min.js")
+  script(src="https://cdn.jsdelivr.net/npm/simple-icons@15.11.0/index.min.js")
+  link(rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.0/css/all.css")
+  link(href="/admin/css/styles.css", rel="stylesheet")
+  link(href="/admin/css/sa.css", rel="stylesheet")
+  block css
+  // Google tag (gtag.js)
+  script(async="", src="https://www.googletagmanager.com/gtag/js?id=G-52YZ3XGZJ6").
+    
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-52YZ3XGZJ6');
