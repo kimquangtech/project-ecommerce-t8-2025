@@ -1,0 +1,25 @@
+mixin treeCategories(categories, level = 0, parent_id = null)
+  each it in categories
+    option(value=it.id selected = (it.id == parent_id ? true : false)) #{'--'.repeat(level)} #{it.name}
+    - if(it.children)
+      +treeCategories(it.children, level + 1, parent_id)
+
+
+mixin treeTable(categories, level = 0)
+  each it in categories
+    tr
+      td
+        input(type="checkbox", class="kt-checkbox", data-kt-datatable-row-check="true", value="")
+      td #{'--'.repeat(level)} #{it.name}
+      td #{it.slug}
+      td
+        span(class="kt-badge kt-badge-success") Approved
+      td 22 Jul 2024
+      td(class="text-end w-0")
+        span(class="inline-flex gap-2.5")
+          a(href=`${ROUTER_ADMIN.VARIABLE.PREFIX}${ROUTER_ADMIN.VARIABLE.ARTICLE_CATEGORY}${ROUTER_ADMIN.ARTICLE_CATEGORY_UPDATE.PATH}/${it.id}`, class="kt-btn kt-btn-sm kt-btn-icon kt-btn-outline")
+            i(class=`fal fa-pen text-xs`)
+          a(href=`${ROUTER_ADMIN.VARIABLE.PREFIX}${ROUTER_ADMIN.VARIABLE.ARTICLE_CATEGORY}${ROUTER_ADMIN.API.ARTICLE_CATEGORY_DELETE}/${it.id}`, class="kt-btn kt-btn-sm kt-btn-icon kt-btn-outline")
+            i(class=`fal fa-trash text-xs`)
+    - if(it.children)
+      +treeTable(it.children, level + 1)

@@ -1,0 +1,50 @@
+extends ../../layouts/default.pug
+include ../../mixins/treeCategories.pug
+
+block script
+  script(src="/admin/js/pages/article-category/create.js")
+
+block action
+  +btn-submit-add(`${ROUTER_ADMIN.VARIABLE.PREFIX}${ROUTER_ADMIN.VARIABLE.ARTICLE_CATEGORY}${ROUTER_ADMIN.API.ARTICLE_CATEGORY_CREATE}`)
+
+block main
+  div(class="grid w-full space-y-5 my-4")
+    div(class="kt-card")
+      div(class="kt-card-header min-h-16")
+        input(type="text", placeholder="Search...", class="kt-input sm:w-48")
+        
+      div(class="kt-card-table", data-kt-datatable="true", data-kt-datatable-page-size="5", data-kt-datatable-state-save="true")
+        div(class="kt-table-wrapper kt-scrollable")
+          table(class="kt-table kt-table-border", data-kt-datatable-table="true")
+            thead
+              tr
+                th(scope="col", class="w-5")
+                  input(type="checkbox", class="kt-checkbox", data-kt-datatable-check="true")
+                th(scope="col", class="w-30", data-kt-datatable-column="label")
+                  span(class="kt-table-col")
+                    span(class="kt-table-col-label") Danh mục
+                    span(class="kt-table-col-sort")
+                th(scope="col", class="w-20", data-kt-datatable-column="method")
+                  span(class="kt-table-col")
+                    span(class="kt-table-col-label") Method
+                    span(class="kt-table-col-sort")
+                th(scope="col", class="w-24", data-kt-datatable-column="status")
+                  span(class="kt-table-col asc")
+                    span(class="kt-table-col-label") Trạng thái
+                    span(class="kt-table-col-sort")
+                th(scope="col", class="w-24", data-kt-datatable-column="lastSession")
+                  span(class="kt-table-col")
+                    span(class="kt-table-col-label") Last Session
+                    span(class="kt-table-col-sort")
+                th(scope="col", class="w-16", data-kt-datatable-column="actions")
+            tbody
+              +treeTable(categories)
+        div(class="kt-datatable-toolbar")
+          div(class="kt-datatable-length")
+            | Hiển thị
+            select(class="kt-select kt-select-sm min-w-20", name="perpage", data-kt-datatable-size="true" data-kt-select="true")
+            | hàng
+          div(class="kt-datatable-info")
+            span(data-kt-datatable-info="true")
+            div(class="kt-datatable-pagination", data-kt-datatable-pagination="true")
+        // end:pagination

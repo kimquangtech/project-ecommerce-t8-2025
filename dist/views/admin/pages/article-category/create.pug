@@ -1,13 +1,11 @@
 extends ../../layouts/default.pug
+include ../../mixins/treeCategories.pug
 
 block script
   script(src="/admin/js/pages/article-category/create.js")
 
-//- block title
-  //- span huhj
 block action
   +btn-submit-add(`${ROUTER_ADMIN.VARIABLE.PREFIX}${ROUTER_ADMIN.VARIABLE.ARTICLE_CATEGORY}${ROUTER_ADMIN.API.ARTICLE_CATEGORY_CREATE}`)
-
 
 block main
   div(class="kt-card ")
@@ -28,9 +26,7 @@ block main
           div(class="kt-form-control")
             select(id = "parent_id" class="kt-select" data-kt-select="true", data-kt-select-enable-search="true", data-kt-select-search-placeholder="Nhập tên danh mục...", data-kt-select-placeholder="Chọn danh mục cha..." name = "parent_id")
               option(value="" selected) ---Chọn danh mục cha---
-              each it in categories
-                option(value=it.id) #{it.name}
-        
+              +treeCategories(categories)
         div(class="kt-form-item")
           label(class="kt-form-label" for="description") Mô tả
           div(class="kt-form-control")

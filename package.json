@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon index.ts",
-    "build": "tsc && node fs-extra.js",
-    "dev": "nodemon --exec ts-node index.ts"
+    "build": "tsc --project tsconfig.json && node fs-extra.js",
+    "dev": "nodemon --exec node --inspect -r ts-node/register index.ts"
   },
   "dependencies": {
     "@keenthemes/ktui": "^1.0.20",

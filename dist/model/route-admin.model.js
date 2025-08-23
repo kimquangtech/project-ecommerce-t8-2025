@@ -13,6 +13,8 @@ const routeAdminSchema = new mongoose_1.Schema({
     DASHBOARD_INDEX: baseRouteSchema,
     CUSTOMER_INDEX: baseRouteSchema,
     ARTICLE_CATEGORY_CREATE: baseRouteSchema,
+    ARTICLE_CATEGORY_INDEX: baseRouteSchema,
+    ARTICLE_CATEGORY_UPDATE: baseRouteSchema,
     INFO_WEBSITE_INDEX: baseRouteSchema,
     API: {
         ROLE_CREATE: String,

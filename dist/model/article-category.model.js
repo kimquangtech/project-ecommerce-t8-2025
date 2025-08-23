@@ -4,6 +4,10 @@ const mongoose_1 = require("mongoose");
 const articleCategorySchema = new mongoose_1.Schema({
     name: String,
     description: String,
+    parent_id: {
+        type: mongoose_1.Schema.Types.ObjectId,
+        ref: "Article Category"
+    }
 }, {
     timestamps: true,
     autoCreate: true

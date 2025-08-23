@@ -19,14 +19,14 @@ block main
         div(class="kt-form-item")
           label(class="kt-form-label" for = "name") Tên danh mục:
           div(class="kt-form-control")
-            input(id = "name" type="text", class="kt-input", placeholder="Tên danh mục" name = "name")
+            input(value = category.name id = "name" type="text", class="kt-input", placeholder="Tên danh mục" name = "name")
             
         div(class="kt-form-item")
           label(class="kt-form-label" for = "parent_id") Danh mục cha
           div(class="kt-form-control")
             select(id = "parent_id" class="kt-select" data-kt-select="true", data-kt-select-enable-search="true", data-kt-select-search-placeholder="Nhập tên danh mục...", data-kt-select-placeholder="Chọn danh mục cha..." name = "parent_id")
               option(value="" selected) ---Chọn danh mục cha---
-              +treeCategories(categories)
+              +treeCategories(categories, 0, category.parent_id._id)
         div(class="kt-form-item")
           label(class="kt-form-label" for="description") Mô tả
           div(class="kt-form-control")

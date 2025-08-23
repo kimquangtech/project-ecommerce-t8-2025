@@ -27,7 +27,7 @@ block main
         div(class="kt-card-toolbar")
           div Tiếng việt
       div(class="kt-card-content ")
-        div(class=`kt-form grid grid-cols-1 md:grid-cols-2 gap-4`)
+        div(class=`kt-form grid lg:grid-cols-2 gap-x-4`)
           +input-icon-svg("Zalo", "socials[zalo]", "text", "https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg", "zalo.me/")
           +input-icon-svg("Facebook", "socials[facebook]", "text", "https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg", "facebook.com/")
           +input-icon-svg("Instagram", "socials[instagram]", "text", "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png", "instagram.com/")
@@ -43,7 +43,7 @@ block main
         div(class="kt-card-toolbar")
           div Tiếng việt
       div(class="kt-card-content ")
-        div(class=`kt-form grid grid-cols-1 md:grid-cols-2 gap-4`)
+        div(class=`kt-form grid lg:grid-cols-2 gap-x-4`)
           +input-link("Shopee", "shopping-cart", "ecommerce[shopee]", "text", "shopee.vn/")
           +input-link("Tiki", "shopping-cart", "ecommerce[tiki]", "text", "tiki.vn/cua-hang/")
           +input-link("Lazada", "shopping-cart", "ecommerce[lazada]", "text", "lazada.vn/shop/")
@@ -60,18 +60,16 @@ block main
         div(class="kt-card-heading")
           h2(class="kt-card-title") Chi nhánh
         div(class="kt-card-toolbar")
-          div Tiếng việt
-      div(class="kt-card-content ")
-        div(class=`kt-form flex flex-col gap-4`)
+          button(type="button" class="kt-btn kt-btn-primary")
+            i(class="fa-duotone fal fa-plus")
+            span Thêm mới chi nhánh
+      div(class="kt-card-content flex flex-col gap-1")
+        div(class=`kt-form grid lg:grid-cols-2 gap-x-4`)
           +input-label("Tên cơ sở", "building", "branch[name]", "text")
           +input-label("Số điện thoại", "phone", "branch[phone]", "text")
           +input-label("Email", "envelope", "branch[email]", "email")
           +input-label("Địa chỉ", "map", "branch[address]", "text")
-          div(class="flex gap-2")
-            button(type="button" class="kt-btn kt-btn-danger")
-              i(class="fa-duotone fal fa-trash")
-              span Xóa
-            button(type="button" class="kt-btn kt-btn-primary")
-              i(class="fa-duotone fal fa-plus")
-              span + Thêm mới chi nhánh
-            i(class=`si si-facebook`)
+        div(class="flex gap-2")
+          button(type="button" class="kt-btn kt-btn-danger")
+            i(class="fa-duotone fal fa-trash")
+            span Xóa

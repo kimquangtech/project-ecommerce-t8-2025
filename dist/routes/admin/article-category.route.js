@@ -44,5 +44,7 @@ exports.default = (app) => {
     const ROUTER_ADMIN = app.get('ROUTER_ADMIN');
     router.get(ROUTER_ADMIN.ARTICLE_CATEGORY_CREATE.PATH, articleCategory.create);
     router.post(ROUTER_ADMIN.API.ROLE_CREATE, articleCategoryValidate.createPost, articleCategory.createPost);
+    router.get(ROUTER_ADMIN.ARTICLE_CATEGORY_UPDATE.PATH + "/:id", articleCategory.update);
+    router.get(ROUTER_ADMIN.ARTICLE_CATEGORY_INDEX.PATH, articleCategory.index);
     return router;
 };
