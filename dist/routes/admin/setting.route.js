@@ -39,10 +39,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const settingController = __importStar(require("../../controller/admin/setting.controller"));
 const infoWebsiteController = __importStar(require("../../controller/admin/info-website.controller"));
+const languageController = __importStar(require("../../controller/admin/language.controller"));
 const router = express_1.default.Router();
 exports.default = (app) => {
     const ROUTER_ADMIN = app.get('ROUTER_ADMIN');
     router.get(ROUTER_ADMIN.INFO_WEBSITE_INDEX.PATH, infoWebsiteController.index);
+    router.get(ROUTER_ADMIN.LANGUAGE_SETTING.PATH, languageController.setting);
     router.get("", settingController.index);
     return router;
 };

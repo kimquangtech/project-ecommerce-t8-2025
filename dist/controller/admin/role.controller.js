@@ -3,14 +3,30 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteManyHard = exports.deleteHard = exports.restoreManyPatch = exports.restorePatch = exports.deleteManyPatch = exports.deletePatch = exports.updatePatch = exports.createPost = exports.index = void 0;
+exports.deleteManyHard = exports.deleteHard = exports.restoreManyPatch = exports.restorePatch = exports.deleteManyPatch = exports.deletePatch = exports.updatePatch = exports.createPost = exports.create = exports.index = void 0;
 const role_model_1 = __importDefault(require("../../model/role.model"));
 const mongodb_1 = require("mongodb");
 const status_model_1 = __importDefault(require("../../model/status.model"));
 const index = async (req, res) => {
-    res.render("admin/pages/role/index.pug");
+    res.render("admin/pages/role/index.pug", {
+        TITLE_PAGE: ROUTER_ADMIN.ROLE_INDEX.TITLE
+    });
 };
 exports.index = index;
+const create = async (req, res) => {
+    try {
+        res.render("admin/pages/role/create.pug", {
+            TITLE_PAGE: ROUTER_ADMIN.ROLE_CREATE.TITLE
+        });
+    }
+    catch (error) {
+        res.status(400).json({
+            success: false,
+            message: "Thêm nhóm quyền thất bại!"
+        });
+    }
+};
+exports.create = create;
 const createPost = async (req, res) => {
     var _a, _b;
     try {
@@ -113,7 +129,7 @@ exports.deleteHard = deleteHard;
 const deleteManyHard = async (req, res) => {
     try {
         const { id } = req.body;
-        await role_model_1.default.deleteMany({ _id: { $in: id } });
+        await role_model_1.default.deleteMany({ _id: id });
         res.status(200).json({
             success: true,
             message: "Xóa nhóm quyền thành công!"

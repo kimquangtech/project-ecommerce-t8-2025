@@ -7,8 +7,7 @@ import bodyParser from "body-parser";
 
 const init = async () => {
   
-  await connect();
-  (globalThis as any).ok = 10
+  await connect(); 
   const app = express();
   const port = 2000;
 

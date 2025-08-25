@@ -22,5 +22,4 @@ export const createPost = async (req: Request, res: Response) => {
       message: "Thêm nhóm quyền thất bại!"
     })
   }
-
 }

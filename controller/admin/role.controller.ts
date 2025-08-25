@@ -4,7 +4,22 @@ import { ObjectId } from "mongodb";
 import Status from "../../model/status.model";
 
 export const index = async (req: Request, res: Response) => {
-  res.render("admin/pages/role/index.pug");
+  res.render("admin/pages/role/index.pug", {
+    TITLE_PAGE: ROUTER_ADMIN.ROLE_INDEX.TITLE
+  });
+}
+
+export const create = async (req: Request, res: Response) => {
+  try {
+    res.render("admin/pages/role/create.pug", {
+      TITLE_PAGE: ROUTER_ADMIN.ROLE_CREATE.TITLE
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Thêm nhóm quyền thất bại!"
+    })
+  }
 }
 
 export const createPost = async (req: Request, res: Response) => {
@@ -25,7 +40,6 @@ export const createPost = async (req: Request, res: Response) => {
       message: "Thêm nhóm quyền thất bại!"
     })
   }
-
 }
 
 export const updatePatch = async (req: Request, res: Response) => {
@@ -120,7 +134,7 @@ export const deleteHard = async (req: Request, res: Response) => {
 export const deleteManyHard = async (req: Request, res: Response) => {
   try {
     const { id } = req.body;
-    await Role.deleteMany({ _id: { $in: id } });
+    await Role.deleteMany({ _id: id });
 
     res.status(200).json({
       success: true,
@@ -132,6 +146,5 @@ export const deleteManyHard = async (req: Request, res: Response) => {
       message: "Xóa nhóm quyền thất bại!"
     })
   }
-
 }
 

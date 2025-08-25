@@ -1,0 +1,109 @@
+extends ../../layouts/default.pug
+include ../../mixins/input.pug
+
+block main
+  div(class=`flex flex-col gap-5 mb-5`) 
+    div(class="kt-card")
+      div(class="kt-card-header")
+        div(class="kt-card-heading")
+          h2(class="kt-card-title") Ngôn ngữ
+        div(class="kt-card-toolbar")
+          div Tiếng việt
+      div(class="kt-card-content ")
+        div(class=`flex flex-col gap-4`) 
+          button(class=`kt-btn kt-btn-primary w-max`)
+            i(class=`fad fas fa-language`)
+            | Xem danh sách ngôn ngữ
+    div(class="kt-card ")
+      div(class="kt-card-header")
+        div(class="kt-card-heading")
+          h2(class="kt-card-title") Cấu hình chung
+        div(class="kt-card-toolbar")
+          div Tiếng việt
+      div(class="kt-card-content ")
+        div(class=`flex flex-col gap-5`) 
+          div(class="flex flex-col gap-3")
+            span(class="kt-label") Dịch tự động khi tạo mới bài viết
+            div(class="grid grid-cols-4 gap-8")
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_1", name="auto_translate", value="1")
+                label(class="kt-label", for="radio_1") Hoạt động
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_2", name="auto_translate", checked="", value="2")
+                label(class="kt-label", for="radio_2") Tạm dừng
+
+          div(class="flex flex-col gap-3")
+            span(class="kt-label") Hiển thị ngôn ngữ trên website
+            div(class="grid grid-cols-4 gap-8")
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_3", name="show_language", value="1", checked)
+                label(class="kt-label", for="radio_3") Hiển thị
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_4", name="show_language", value="2")
+                label(class="kt-label", for="radio_4") Ẩn
+
+          div(class="flex flex-col gap-3")
+            span(class="kt-label") Vị trí hiển thị ngôn ngữ
+            div(class="grid grid-cols-4 gap-8")
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_5", name="language_position", value="header", checked)
+                label(class="kt-label", for="radio_5") Header
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_6", name="language_position", value="footer")
+                label(class="kt-label", for="radio_6") Footer
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_7", name="language_position", value="sidebar")
+                label(class="kt-label", for="radio_7") Sidebar
+
+          div(class="flex flex-col gap-3")
+            span(class="kt-label") Hiển thị cờ quốc gia
+            div(class="grid grid-cols-4 gap-8")
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_8", name="show_flags", value="1", checked)
+                label(class="kt-label", for="radio_8") Có
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_9", name="show_flags", value="2")
+                label(class="kt-label", for="radio_9") Không
+
+          div(class="flex flex-col gap-3")
+            span(class="kt-label") Hiển thị tên ngôn ngữ
+            div(class="grid grid-cols-4 gap-8")
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_10", name="show_names", value="1", checked)
+                label(class="kt-label", for="radio_10") Có
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_11", name="show_names", value="2")
+                label(class="kt-label", for="radio_11") Không
+
+          div(class="flex flex-col gap-3")
+            span(class="kt-label") Dịch tự động nội dung SEO
+            div(class="grid grid-cols-4 gap-8")
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_12", name="seo_translate", value="1")
+                label(class="kt-label", for="radio_12") Hoạt động
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_13", name="seo_translate", value="2", checked)
+                label(class="kt-label", for="radio_13") Tạm dừng
+
+          div(class="flex flex-col gap-3")
+            span(class="kt-label") Dịch tự động URL
+            div(class="grid grid-cols-4 gap-8")
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_14", name="url_translate", value="1")
+                label(class="kt-label", for="radio_14") Hoạt động
+              
+              div(class="flex items-center gap-2.5")
+                input(type="radio", class="kt-radio", id="radio_15", name="url_translate", value="2", checked)
+                label(class="kt-label", for="radio_15") Tạm dừng
+
+          div(class="flex justify-end gap-3 pt-4")
+            button(type="button" class="kt-btn kt-btn-secondary") Hủy
+            button(type="submit" class="kt-btn kt-btn-primary") Lưu cài đặt
+          

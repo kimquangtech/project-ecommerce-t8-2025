@@ -1,11 +1,23 @@
 mixin input-label(label, icon, name, type = "text", value = null)
-
   div(class=`kt-form-item`)
     label(class=`kt-form-label font-[400]` for = name) #{label}
     div(class="kt-input-group")
       div(class="kt-input-addon kt-input-addon-icon")
         i(class=`fa-duotone fal fa-${icon}`)
       input(type=type, class="kt-input" id = name name = name value = value)
+
+mixin input-label-2(label, name, type = "text", required = "norequired", value = null)
+  div(class=`kt-form-item grid grid-cols-5`)
+    label(class=`kt-form-label font-[400]` for = name) #{label}
+    div(class="kt-input-group col-span-4")
+      input(type=type, class="kt-input" id = name name = name value = value required = (required == "required" ? true : false))
+
+mixin textarea-label(label, name, type = "text", required = "norequired", value = null)
+  div(class=`kt-form-item grid grid-cols-5`)
+    label(class=`kt-form-label font-[400]` for = name) #{label}
+    div(class="kt-input-group col-span-4")
+      textarea(class="kt-textarea" id = name name = name value = value required = (required == "required" ? true : false))
+
 
 mixin input-link(label, icon, name, type = "text", link, value = null)
   div(class=`kt-form-item`)

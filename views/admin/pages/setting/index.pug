@@ -1,15 +1,15 @@
 extends ../../layouts/default.pug
 
 mixin setting-card(icon, title, description, href=null)
-  a(href=href class=`flex items-start gap-3 p-5 cursor-pointer hover:bg-[var(--color-gray-50)] rounded-xl border border-border h-full`) 
+  a(href=href class=`flex items-start gap-3 p-5 cursor-pointer hover:bg-[var(--color-gray-50)] rounded-xl  h-full`) 
     div(class=`rounded-full flex items-center justify-center flex-shrink-0`)
-      i(class=`ki-duotone ${icon} text-[var(--color-blue-950)] text-3xl`)
+      i(class=`fa-duotone fa-solid fa-${icon} text-[var(--color-blue-950)] text-3xl`)
     div(class=`flex flex-col gap-1 flex-1 min-w-0`)
       h3(class=`text-sm font-medium line-clamp-1`) #{title}
       h4(class=`text-xs font-normal text-muted-foreground line-clamp-2`) #{description}
 
 block main
-  div(class="kt-card ")
+  div(class="kt-card")
     div(class="kt-card-header")
       div(class="kt-card-heading")
         h2(class="kt-card-title") Cài đặt chung
@@ -18,45 +18,50 @@ block main
     div(class="kt-card-content ")
       div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
         +setting-card(
-          "ki-information-2",
+          "circle-info",
           "Thông tin Website",
           "Thiết lập thông tin website",
           `${ROUTER_ADMIN.VARIABLE.PREFIX}${ROUTER_ADMIN.VARIABLE.SETTING}${ROUTER_ADMIN.INFO_WEBSITE_INDEX.PATH}`
         )
         +setting-card(
-          "ki-flag",
+          "language",
           "Ngôn ngữ",
           "Thiết lập ngôn ngữ website"
         )
         +setting-card(
-          "ki-message-text",
+          "envelopes",
           "Cấu hình email",
           "Thiết lập cấu hình email"
         )
         +setting-card(
-          "ki-map",
+          "city",
           "Tỉnh thành",
-          "Quản lý thông tin tỉnh thành"
+          "Thiết lập tỉnh, thành phố"
         )
         +setting-card(
-          "ki-paper-plane",
+          "address-card",
           "Form liên hệ",
-          "Quản lý thông tin form liên hệ"
+          "Quản lí thông tin form liên hệ"
         )
         +setting-card(
-          "ki-menu",
+          "indent",
           "Danh sách thuộc tính",
           "Tùy chỉnh các thuộc tính mở rộng của sản phẩm và bài viết"
         )
         +setting-card(
-          "ki-social-media",
+          "share-alt",
           "Mạng xã hội",
           "Cấu hình các thông tin liên quan đến các trang mạng xã hội"
         )
         +setting-card(
-          "ki-code",
+          "message-code",
           "Mã nhúng",
-          "Quản lý mã nhúng"
+          "Quản lí mã nhúng"
+        )
+        +setting-card(
+          "phone",
+          "Cấu hình số điện thoại",
+          "Quản lí các đầu số điện thoại"
         )
   
   div(class="kt-card mt-6")
@@ -68,12 +73,166 @@ block main
     div(class="kt-card-content")
       div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
         +setting-card(
-          "ki-check-circle",
+          "list-check",
           "Thuộc tính áp dụng theo danh mục",
-          "Tùy chỉnh các thuộc tính mở rộng cho từng danh mục sản phẩm"
+          "Thiết lập tài khoản"
         )
         +setting-card(
-          "ki-tag",
+          "tags",
           "Thương hiệu áp dụng theo danh mục",
-          "Tùy chỉnh thương hiệu cho từng danh mục sản phẩm"
+          "Thiết lập nhóm quyền"
+        )
+
+  div(class="kt-card mt-6")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Bán hàng
+      div(class="kt-card-toolbar")
+        div Quản lý
+    div(class="kt-card-content")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "shirt",
+          "Sản phẩm",
+          "Thiết lập cấu hình sản phẩm"
+        )
+        +setting-card(
+          "basket-shopping",
+          "Đơn hàng",
+          "Thiết lập cấu hình đơn hàng"
+        )
+        +setting-card(
+          "print",
+          "Mẫu in",
+          "Thiết lập cấu hình mẫu in"
+        )
+        +setting-card(
+          "cart-flatbed-boxes",
+          "Nguồn đơn hàng",
+          "Thêm và quản lí nguồn tạo ra đơn hàng"
+        )
+        +setting-card(
+          "truck",
+          "Vận chuyển",
+          "Cấu hình giá và phương thức vận chuyển"
+        )
+        +setting-card(
+          "truck-fast",
+          "Hãng vận chuyển",
+          "Thiết lập hãng vận chuyển"
+        )
+
+  div(class="kt-card mt-6")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Tiền tệ
+      div(class="kt-card-toolbar")
+        div Quản lý
+    div(class="kt-card-content")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "money-bills",
+          "Tiền tệ",
+          "Thiết lập tiền tệ của hệ thống"
+        )
+        +setting-card(
+          "landmark",
+          "Cổng thanh toán",
+          "Thiết lập cổng thanh toán"
+        )
+
+  div(class="kt-card mt-6")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Tài khoản
+      div(class="kt-card-toolbar")
+        div Quản lý
+    div(class="kt-card-content")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "users",
+          "Danh sách tài khoản",
+          "Thiết lập tài khoản"
+        )
+        +setting-card(
+          "users-gear",
+          "Nhóm quyền",
+          "Thiết lập nhóm quyền"
+        )
+        +setting-card(
+          "user-pen",
+          "Phân quyền",
+          "Thiết lập phân quyền"
+        )
+        +setting-card(
+          "pen-to-square",
+          "Duyệt bài viết",
+          "Thiết lập quyền duyệt bài viết"
+        )
+
+  div(class="kt-card mt-6")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Hệ thống
+      div(class="kt-card-toolbar")
+        div Quản lý
+    div(class="kt-card-content")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "moon",
+          "Đổi chế độ",
+          "Thay đổi chế độ website"
+        )
+        +setting-card(
+          "trash-can",
+          "Xóa cache",
+          "Xóa bộ nhớ lưu trữ tạm thời của website"
+        )
+        +setting-card(
+          "code-branch",
+          "Chuyển hướng",
+          "Chuyển hướng đường dẫn website"
+        )
+
+  div(class="kt-card mt-6")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Kết nối
+      div(class="kt-card-toolbar")
+        div Quản lý
+    div(class="kt-card-content")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "code",
+          "API",
+          "Thiết lập thông tin API"
+        )
+        +setting-card(
+          "comment-dots",
+          "Gửi tin nhắn",
+          "Thiết lập gửi tin nhắn"
+        )
+        +setting-card(
+          "comment-sms",
+          "Sms Brandname",
+          "Thiết lập cấu hình sms brandname"
+        )
+
+  div(class="kt-card mt-6")
+    div(class="kt-card-header")
+      div(class="kt-card-heading")
+        h2(class="kt-card-title") Bảo mật
+      div(class="kt-card-toolbar")
+        div Quản lý
+    div(class="kt-card-content")
+      div(class=`grid sm:grid-cols-1 md:grid-cols-2  xl:grid-cols-4 gap-3`)
+        +setting-card(
+          "user-shield",
+          "Khách hàng",
+          "Thiết lập cấu hình khách hàng"
+        )
+        +setting-card(
+          "shield-halved",
+          "reCAPTCH v3",
+          "Chống span và bảo mật thông tin dữ liệu"
         )

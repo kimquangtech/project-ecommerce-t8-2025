@@ -10,7 +10,6 @@ const mongodb_connect_1 = require("./database/mongodb.connect");
 const body_parser_1 = __importDefault(require("body-parser"));
 const init = async () => {
     await (0, mongodb_connect_1.connect)();
-    globalThis.ok = 10;
     const app = (0, express_1.default)();
     const port = 2000;
     app.set("views", `${__dirname}/views`);

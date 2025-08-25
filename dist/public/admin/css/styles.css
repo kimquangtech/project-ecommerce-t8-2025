@@ -10868,3 +10868,10 @@ html {
 .swal2-height-auto {
   height: -webkit-fill-available !important;
 }
+
+.kt-form-item:has(*[required]) .kt-form-label::before {
+  content: "*";
+  color: var(--color-red-600);
+  margin-right: 0.25rem;
+  font-weight: bold;
+}

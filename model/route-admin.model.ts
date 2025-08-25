@@ -12,10 +12,14 @@ const routeAdminSchema = new Schema({
   PAGE_ADMIN: baseRouteSchema,
   DASHBOARD_INDEX: baseRouteSchema,
   CUSTOMER_INDEX: baseRouteSchema,
-  ARTICLE_CATEGORY_CREATE: baseRouteSchema,
   ARTICLE_CATEGORY_INDEX: baseRouteSchema,
+  ARTICLE_CATEGORY_CREATE: baseRouteSchema,
   ARTICLE_CATEGORY_UPDATE: baseRouteSchema,
+  ROLE_INDEX: baseRouteSchema,
+  ROLE_CREATE: baseRouteSchema,
+  PERMISSION_INDEX: baseRouteSchema,
   INFO_WEBSITE_INDEX: baseRouteSchema,
+  LANGUAGE_SETTING: baseRouteSchema,
   API: {
     ROLE_CREATE: String,
     ROLE_UPDATE: String,
@@ -45,7 +49,8 @@ const routeAdminSchema = new Schema({
     CUSTOMER: String,
     SETTING: String,
     STATUS: String,
-    ARTICLE_CATEGORY: String
+    ARTICLE_CATEGORY: String,
+    LANGUAGE: String
   }
 }, {
   timestamps: true
